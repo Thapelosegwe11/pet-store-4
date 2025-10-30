@@ -1,0 +1,10 @@
+build
+.idea/
+[Bb]in/
+[Oo]bj/
+.gauge/
+.vscode/
+logs/
+reports/
+gauge_bin/
+*.sln.DotSettings.user
