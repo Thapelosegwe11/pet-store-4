@@ -1,19 +1,21 @@
 using System.Collections.Generic;
 using FluentAssertions;
 using Gauge.CSharp.Lib.Attribute;
-using Applications.PetStore.Swagger.Api;
+using RestSharp;
 
 namespace Applications.PetStore.Steps
 {
     public class StoreSteps
     {
-        private Dictionary<string, int?> _inventory;
-        private readonly StoreApi _storeApi = new StoreApi(StepsHelper.BasePath);
+        private Dictionary<string, int> _inventory;
 
         [Step("Get store inventory")]
         public void GetStoreInventory()
-        {
-            _inventory = _storeApi.GetInventory();
+{
+            var client = new RestClient("http://localhost/v2");
+            var request = new RestRequest("/store/inventory", Method.GET);
+            var response = client.Execute<Dictionary<string, int>>(request);
+            _inventory = response.Data;
             _inventory.Should().NotBeEmpty();
         }
 
