@@ -1,4 +1,4 @@
-# pet-store-4
+# pet-store-4.
 
 ![Gauge](https://img.shields.io/badge/Gauge-1.6-orange) ![OpenAPI](https://img.shields.io/badge/OpenAPI-Generator-orange) ![.NET](https://img.shields.io/badge/.NET-8.0-purple) ![Docker](https://img.shields.io/badge/Docker-Compose-blue)
 
